@@ -12,147 +12,337 @@
 <meta property="og:image" content="https://www.thepumpermesh.com/assets/hero-pumper-truck.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-:root{
-  --steel:#6d94a5;      /* top bar blue */
-  --steel-dark:#5d8093;
-  --cta:#d9705c;        /* salmon red button */
-  --cta-hover:#c75f4b;
-  --ink:#3d4247;
-  --ink-light:#6b7278;
-  --paper:#ffffff;
-  --paper-alt:#f4f5f6;
-  --footer:#2e3336;
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-dark: #0f1114;
+  --bg-dark-card: #1a1d23;
+  --bg-light: #fafaf9;
+  --bg-light-alt: #f3f2ef;
+  --text-dark: #0f1114;
+  --text-light: #fafaf9;
+  --text-muted-dark: #9ca3af;
+  --text-muted-light: #6b7280;
+  --accent: #51A69D;
+  --accent-hover: #448f87;
+  --border-dark: rgba(255,255,255,0.08);
+  --border-light: rgba(0,0,0,0.08);
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --section-pad-y: 80px;
+  --section-pad-x: 24px;
+  --max-w: 1200px;
+  --max-w-narrow: 720px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
 }
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Source Sans 3','Source Sans Pro',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);font-size:19px;line-height:1.55}
-img{max-width:100%;height:auto}
-a{color:var(--steel-dark)}
-.wrap{max-width:960px;margin:0 auto;padding:0 22px}
-.narrow{max-width:760px;margin:0 auto;padding:0 22px}
 
-/* top bar */
-.topbar{background:var(--steel);color:#fff;padding:14px 0;position:sticky;top:0;z-index:50;box-shadow:0 1px 4px rgba(0,0,0,.15)}
-.topbar .wrap{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
-.topbar span{font-size:20px;font-weight:300;letter-spacing:.4px}
-.topbar a.btn-small{background:var(--cta);color:#fff;text-decoration:none;padding:9px 20px;border-radius:4px;font-weight:600;font-size:16px}
-.topbar a.btn-small:hover{background:var(--cta-hover)}
+html { scroll-behavior: smooth; }
 
-/* hero */
-.hero{background:#1c2226 url('../assets/hero-pumper-truck.jpg') center/cover no-repeat;position:relative;color:#fff;text-align:center}
-.hero::before{content:"";position:absolute;inset:0;background:rgba(15,20,24,.55)}
-.hero .inner{position:relative;padding:84px 22px 72px;max-width:860px;margin:0 auto}
-.hero .eyebrow{text-transform:uppercase;letter-spacing:2.5px;font-size:14px;font-weight:600;color:#e8d9b0;margin-bottom:18px}
-.hero h1{font-weight:300;font-size:46px;line-height:1.15;margin-bottom:8px}
-.hero h1 .geo{font-weight:600;border-bottom:3px solid var(--cta);white-space:nowrap}
-.hero .sub{font-size:23px;font-weight:300;max-width:640px;margin:26px auto 0}
-.hero .sub em{font-style:italic}
-.hero .cta{display:inline-block;background:var(--cta);color:#fff;text-decoration:none;font-size:23px;font-weight:600;padding:18px 46px;border-radius:4px;margin-top:34px;box-shadow:0 2px 10px rgba(0,0,0,.3)}
-.hero .cta:hover{background:var(--cta-hover)}
-.hero .micro{font-size:14px;color:#cfd6da;margin-top:16px;max-width:520px;margin-left:auto;margin-right:auto}
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background: var(--bg-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-/* press bar */
-.press{background:var(--paper);padding:34px 0 26px;border-bottom:1px solid #e7eaec}
-.press p{text-align:center;text-transform:uppercase;letter-spacing:2px;font-size:12px;color:var(--ink-light);margin-bottom:18px}
-.press .logos{display:flex;justify-content:center;align-items:center;gap:38px;flex-wrap:wrap}
-.press img{height:34px;width:auto;opacity:.85}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
 
-/* sections */
-section{padding:64px 0}
-section.alt{background:var(--paper-alt)}
-h2{font-weight:300;font-size:36px;line-height:1.2;text-align:center;margin-bottom:30px}
-.narrow p{margin-bottom:20px}
-.center{text-align:center}
-.btn{display:inline-block;background:var(--cta);color:#fff;text-decoration:none;font-size:21px;font-weight:600;padding:16px 40px;border-radius:4px}
-.btn:hover{background:var(--cta-hover)}
-.micro{font-size:14px;color:var(--ink-light)}
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--section-pad-x); }
+.container-narrow { max-width: var(--max-w-narrow); margin: 0 auto; padding: 0 var(--section-pad-x); }
 
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:38px}
-.step{background:#fff;border:1px solid #e2e6e8;border-radius:6px;padding:30px 24px;text-align:center}
-.step .num{width:52px;height:52px;border-radius:50%;background:var(--steel);color:#fff;font-size:26px;font-weight:600;line-height:52px;margin:0 auto 16px}
-.step h3{font-size:21px;font-weight:600;margin-bottom:10px}
-.step p{font-size:17px;color:var(--ink-light)}
+.section-dark { background: var(--bg-dark); color: var(--text-light); }
+.section-light { background: var(--bg-light); color: var(--text-dark); }
+.section-light-alt { background: var(--bg-light-alt); color: var(--text-dark); }
+.section-pad { padding-top: var(--section-pad-y); padding-bottom: var(--section-pad-y); }
 
-/* map */
-.map-img{display:block;margin:10px auto 0;max-width:680px;width:100%}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.2; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); letter-spacing: -0.01em; margin-bottom: 32px; }
+h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); margin-bottom: 12px; }
 
-/* pumper cards */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:38px}
-.card{background:#fff;border:1px solid #e2e6e8;border-radius:6px;padding:26px}
-.card h3{font-size:20px;font-weight:700;color:var(--steel-dark)}
-.card .loc{font-size:14px;text-transform:uppercase;letter-spacing:1.2px;color:var(--ink-light);margin:4px 0 12px}
-.card p{font-size:16px;line-height:1.5;color:var(--ink)}
-.card img{width:74px;height:74px;border-radius:50%;object-fit:cover;float:right;margin:0 0 10px 12px}
+.cta-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 36px;
+  border-radius: 6px;
+  transition: background 0.2s ease, transform 0.15s ease;
+  letter-spacing: 0.01em;
+}
+.cta-btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.cta-btn:active { transform: translateY(0); }
 
-/* testimonial */
-.quote-block{max-width:760px;margin:0 auto;text-align:center}
-.quote-block img.face{width:110px;height:110px;border-radius:50%;object-fit:cover;margin-bottom:20px}
-.quote-block blockquote{font-size:24px;font-weight:300;font-style:italic;line-height:1.45}
-.quote-block .who{margin-top:18px;font-weight:600}
-.quote-block .who span{display:block;font-weight:400;font-size:16px;color:var(--ink-light)}
+.micro-copy { font-size: 14px; color: var(--text-muted-light); margin-top: 12px; }
+.section-dark .micro-copy, .hero .micro-copy { color: var(--text-muted-dark); }
+.center { text-align: center; }
 
-/* E&P section */
-.ep{display:flex;gap:44px;align-items:flex-start;max-width:900px;margin:0 auto;padding:0 22px}
-.ep .cover{flex:0 0 240px}
-.ep .cover img{border:1px solid #ddd;box-shadow:0 4px 14px rgba(0,0,0,.15)}
-.ep .body{flex:1}
-.ep .body h2{text-align:left}
-.ep .body p{margin-bottom:18px}
+/* ========== NAV ========== */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(15, 17, 20, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--text-light);
+}
+.nav-logo span { color: var(--accent); }
+.nav-cta {
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--accent-hover); }
 
-/* founder */
-.founder{background:var(--footer);color:#fff;text-align:center}
-.founder img.face{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:22px}
-.founder blockquote{font-size:26px;font-weight:300;font-style:italic;max-width:740px;margin:0 auto;line-height:1.4}
-.founder .who{margin-top:20px;font-weight:600}
-.founder .who span{display:block;font-weight:300;font-size:16px;color:#aeb7bc}
-.founder img.award{height:74px;width:auto;margin-top:26px}
+/* ========== HERO ========== */
+.hero {
+  padding-top: 140px;
+  padding-bottom: var(--section-pad-y);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(rgba(17,24,39,0.72), rgba(17,24,39,0.82)), url('../assets/hero-pumper-truck.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  color: var(--text-light);
+  text-align: center;
+}
+.hero .inner { max-width: 860px; margin: 0 auto; padding: 0 var(--section-pad-x); }
+.hero-pre {
+  font-size: 14px;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.hero h1 { margin-bottom: 20px; }
+.hero h1 .geo { border-bottom: 3px solid var(--accent); white-space: nowrap; }
+.hero-sub {
+  font-size: 18px;
+  color: var(--text-muted-dark);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 16px;
+}
+.cta-group { margin-top: 40px; }
+.hero .micro-copy { max-width: 520px; margin-left: auto; margin-right: auto; }
 
-/* signup */
-#signup .formbox{max-width:760px;margin:34px auto 0;border:1px solid #e2e6e8;border-radius:6px;overflow:hidden;background:#fff}
-#signup iframe{display:block;width:100%;height:560px;border:0}
+/* ========== CRED BAR ========== */
+.cred-bar { text-align: center; padding: 40px var(--section-pad-x); border-bottom: 1px solid var(--border-light); }
+.cred-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted-light);
+  margin-bottom: 20px;
+}
+.cred-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.cred-logos img {
+  height: 32px;
+  width: auto;
+  opacity: 0.55;
+  filter: grayscale(1);
+  transition: opacity 0.2s, filter 0.2s;
+}
+.cred-logos img:hover { opacity: 1; filter: grayscale(0); }
 
-/* footer */
-footer{background:var(--footer);color:#9aa4aa;padding:52px 0 40px;text-align:center;font-size:15px}
-footer img.pmlogo{height:64px;width:auto;margin-bottom:18px;opacity:.9}
-footer p{max-width:560px;margin:0 auto 14px}
-footer a{color:#cdd5d9}
+/* ========== STORY ========== */
+.story p { margin-bottom: 20px; }
 
-@media(max-width:760px){
-  .hero h1{font-size:32px}
-  .hero h1 .geo{white-space:normal}
-  .hero .sub{font-size:19px}
-  h2{font-size:29px}
-  .steps{grid-template-columns:1fr}
-  .ep{flex-direction:column;align-items:center}
-  .ep .body h2{text-align:center}
-  body{font-size:17px}
+/* ========== STEPS ========== */
+.steps-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.step {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 0 24px;
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.step:last-child { border-bottom: none; }
+.step-num {
+  font-family: var(--font-display);
+  font-size: 56px;
+  color: var(--accent);
+  line-height: 1;
+  opacity: 0.7;
+  text-align: center;
+}
+.step-content h3 { margin-bottom: 10px; font-size: 20px; }
+.step-content p { color: var(--text-muted-light); font-size: 16px; line-height: 1.7; }
+
+/* ========== MAP ========== */
+.map-img { display: block; margin: 40px auto 0; max-width: 680px; width: 100%; }
+
+/* ========== TESTIMONIAL (dark) ========== */
+.quote-block { max-width: 760px; margin: 0 auto; text-align: center; padding: 0 var(--section-pad-x); }
+.quote-block img.face { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin: 0 auto 24px; }
+.quote-block blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  line-height: 1.45;
+}
+.quote-block .who { margin-top: 22px; font-weight: 600; }
+.quote-block .who span { display: block; font-weight: 400; font-size: 15px; color: var(--text-muted-dark); }
+
+/* ========== PUMPER CARDS ========== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
+.card h3 { font-size: 20px; margin-bottom: 2px; }
+.card .loc {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.card p { font-size: 15px; line-height: 1.65; color: var(--text-muted-light); }
+.card img { width: 68px; height: 68px; border-radius: 50%; object-fit: cover; float: right; margin: 0 0 10px 12px; }
+
+/* ========== E&P ========== */
+.ep {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--section-pad-x);
+}
+.ep .cover { flex: 0 0 240px; }
+.ep .cover img { border-radius: var(--radius); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+.ep .body { flex: 1; }
+.ep .body h2 { text-align: left; }
+.ep .body p { margin-bottom: 18px; }
+.ep a { color: var(--accent-hover); text-decoration: underline; }
+
+/* ========== FOUNDER ========== */
+.founder { text-align: center; }
+.founder img.face { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; margin: 0 auto 24px; }
+.founder blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  max-width: 740px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+.founder .who { margin-top: 22px; font-weight: 600; }
+.founder .who span { display: block; font-weight: 400; font-size: 15px; color: var(--text-muted-dark); }
+.founder img.award { height: 70px; width: auto; margin: 28px auto 0; border-radius: 4px; opacity: 0.85; }
+
+/* ========== SIGNUP ========== */
+#signup .formbox {
+  max-width: 760px;
+  margin: 40px auto 0;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-card);
+}
+#signup .micro-copy a { color: var(--accent-hover); text-decoration: underline; }
+
+/* ========== FOOTER ========== */
+.site-footer {
+  background: var(--bg-dark);
+  padding: 48px var(--section-pad-x) 40px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.25);
+  border-top: 1px solid var(--border-dark);
+}
+.site-footer img.pmlogo { height: 56px; width: auto; margin: 0 auto 18px; opacity: 0.7; }
+.site-footer p { max-width: 560px; margin: 0 auto 12px; }
+.site-footer a { text-decoration: underline; }
+.site-footer a:hover { color: rgba(255,255,255,0.5); }
+
+@media (min-width: 768px) {
+  :root { --section-pad-y: 100px; --section-pad-x: 40px; }
+}
+@media (max-width: 760px) {
+  .hero { padding-top: 120px; min-height: 0; }
+  .hero h1 .geo { white-space: normal; }
+  .ep { flex-direction: column; align-items: center; }
+  .ep .body h2 { text-align: center; }
+  .step { grid-template-columns: 48px 1fr; }
+  .step-num { font-size: 40px; }
 }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="wrap">
-    <span>The GreaseBook <strong>Pumper Mesh</strong></span>
-    <a class="btn-small" href="#signup">Get Added To The Directory</a>
-  </div>
-</div>
+<nav class="nav">
+  <a class="nav-logo" href="./">The GreaseBook <span>Pumper Mesh</span></a>
+  <a class="nav-cta" href="#signup">Get Added To The Directory</a>
+</nav>
 
-<div class="hero">
+<header class="hero">
   <div class="inner">
-    <p class="eyebrow">A free directory for contract pumpers, lease operators &amp; well tenders</p>
+    <p class="hero-pre">A free directory for contract pumpers, lease operators &amp; well tenders</p>
     <h1>Now, looking for Contract Pumpers around: <span class="geo" id="geo-city">your neck of the woods</span></h1>
-    <p class="sub">The GreaseBook <em>Pumper Mesh</em> introduces you to oil and gas companies that have wells that need pumping (in the exact Counties you already drive).</p>
-    <a class="cta" href="#signup">Get Added To The Directory Now!</a>
-    <p class="micro">Your information is secure and will not be shared. The Mesh costs you nothing, because it's our way of saying "thanks" for holding down the front line of oil and gas.</p>
+    <p class="hero-sub">The GreaseBook <em>Pumper Mesh</em> introduces you to oil and gas companies that have wells that need pumping (in the exact Counties you already drive).</p>
+    <div class="cta-group">
+      <a class="cta-btn" href="#signup">Get Added To The Directory Now!</a>
+      <p class="micro-copy">Your information is secure and will not be shared. The Mesh costs you nothing, because it's our way of saying "thanks" for holding down the front line of oil and gas.</p>
+    </div>
   </div>
-</div>
+</header>
 
-<div class="press">
-  <p>As featured in</p>
-  <div class="logos">
+<div class="cred-bar section-light">
+  <p class="cred-label">As featured in</p>
+  <div class="cred-logos">
     <img src="../assets/logo-oilvoice.png" alt="OilVoice">
     <img src="../assets/logo-aogr.png" alt="The American Oil &amp; Gas Reporter">
     <img src="../assets/logo-ogfj.png" alt="Oil &amp; Gas Financial Journal">
@@ -161,9 +351,9 @@ footer a{color:#cdd5d9}
   </div>
 </div>
 
-<section>
-  <div class="narrow">
-    <h2>Now, Oilfield Pumper Jobs Come Easy...</h2>
+<section class="section-light section-pad story">
+  <div class="container-narrow">
+    <h2 class="center">Now, Oilfield Pumper Jobs Come Easy...</h2>
     <p>What if we told you landing new wells was a snap?</p>
     <p>What if you could pick and choose your wells at will, letting go of the wells that sit off the beaten path in favor of wells closer to home? (Less windshield time, less gas money, more wells made in a day.)</p>
     <p>Well, as of now, it's not a dream anymore.</p>
@@ -174,39 +364,45 @@ footer a{color:#cdd5d9}
   </div>
 </section>
 
-<section class="alt">
-  <div class="wrap">
-    <h2>How It Works</h2>
-    <div class="steps">
+<section class="section-light-alt section-pad">
+  <div class="container">
+    <h2 class="center">How It Works</h2>
+    <div class="steps-grid">
       <div class="step">
-        <div class="num">1</div>
-        <h3>Sign up for the directory</h3>
-        <p>Tell us the State and Counties you pump (or want to pump), and give us some background on your mechanical or production expertise.</p>
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Sign up for the directory</h3>
+          <p>Tell us the State and Counties you pump (or want to pump), and give us some background on your mechanical or production expertise.</p>
+        </div>
       </div>
       <div class="step">
-        <div class="num">2</div>
-        <h3>We build you out</h3>
-        <p>Fair warning: we build every listing by hand, so profiles generally take 10 to 14 days to go live. But once you're in, you're in.</p>
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>We build you out</h3>
+          <p>Fair warning: we build every listing by hand, so profiles generally take 10 to 14 days to go live. But once you're in, you're in.</p>
+        </div>
       </div>
       <div class="step">
-        <div class="num">3</div>
-        <h3>Sit back while the wells come rollin' in</h3>
-        <p>You'll be notified of Operators who have wells in your Counties that need pumping.</p>
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Sit back while the wells come rollin' in</h3>
+          <p>You'll be notified of Operators who have wells in your Counties that need pumping.</p>
+        </div>
       </div>
     </div>
-    <p class="center" style="margin-top:38px"><a class="btn" href="#signup">Get Added To The Directory Now!</a></p>
+    <p class="center" style="margin-top:40px"><a class="cta-btn" href="#signup">Get Added To The Directory Now!</a></p>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <h2>One Mesh, Every Basin</h2>
-    <p class="center" style="max-width:640px;margin:0 auto">Pumpers on the Mesh cover counties from the Permian to the Bakken. Every pin is a pumper who hung his shingle out, just like you're about to.</p>
+<section class="section-light section-pad">
+  <div class="container">
+    <h2 class="center">One Mesh, Every Basin</h2>
+    <p class="center" style="max-width:640px;margin:0 auto;color:var(--text-muted-light)">Pumpers on the Mesh cover counties from the Permian to the Bakken. Every pin is a pumper who hung his shingle out, just like you're about to.</p>
     <img class="map-img" src="../assets/pumper-mesh-map.png" alt="Map of Pumper Mesh contract pumpers across the United States">
   </div>
 </section>
 
-<section class="alt">
+<section class="section-dark section-pad">
   <div class="quote-block">
     <img class="face" src="../assets/victor-g.png" alt="Victor G., contract gauger and pumper">
     <blockquote>"I've picked up 5 new wells from 2 different operators. More tightly grouped wells means shorter drive times for me, less wear and tear on my truck, and more money in my pocket (not to mention, more free time outside of work...) I really appreciate what you guys are doing, keep'em comin'!! Thank you!!"</blockquote>
@@ -214,11 +410,11 @@ footer a{color:#cdd5d9}
   </div>
 </section>
 
-<section id="pumpers">
-  <div class="wrap">
-    <h2>In Need of a Good Pumper? Look No Further.</h2>
+<section id="pumpers" class="section-light section-pad">
+  <div class="container">
+    <h2 class="center">In Need of a Good Pumper? Look No Further.</h2>
     <p class="center" style="max-width:680px;margin:0 auto 6px">Operators: the Pumper Mesh is a FREE directory from which you can source pumpers by County and contact those pumpers direct. (And no, you don't need to be a GreaseBook user to take advantage of it.)</p>
-    <p class="center micro">Just another example of how GreaseBook helps oil and gas operators pump more oil, waste less time, and make more money.</p>
+    <p class="center micro-copy">Just another example of how GreaseBook helps oil and gas operators pump more oil, waste less time, and make more money.</p>
     <div class="cards">
       <div class="card">
         <h3>Les P.</h3>
@@ -255,7 +451,7 @@ footer a{color:#cdd5d9}
   </div>
 </section>
 
-<section class="alt">
+<section class="section-light-alt section-pad">
   <div class="ep">
     <div class="cover">
       <img src="../assets/ep-magazine-cover.jpg" alt="E&amp;P Magazine cover">
@@ -273,8 +469,8 @@ footer a{color:#cdd5d9}
   </div>
 </section>
 
-<section class="founder">
-  <div class="wrap">
+<section class="section-dark section-pad founder">
+  <div class="container">
     <img class="face" src="../assets/greg-archbald.png" alt="Greg Archbald, GreaseBook founder">
     <blockquote>"GreaseBook aims to introduce every pumper, lease operator, gauger, and well tender that heeds our call to the independent oil and gas operators that have wells that need tending!!"</blockquote>
     <p class="who">Greg Archbald | GreaseBook Founder <span>Oklahoma City, OK</span></p>
@@ -282,25 +478,23 @@ footer a{color:#cdd5d9}
   </div>
 </section>
 
-<section id="signup" class="alt">
-  <div class="wrap">
-    <h2>Get Added To The Directory Now</h2>
-    <p class="center" style="max-width:640px;margin:0 auto">Takes about 3 minutes. Tell us your name, your Counties, and a quick blurb about yourself (nothing fancy, just straightforward). We'll handle the rest.</p>
+<section id="signup" class="section-light section-pad">
+  <div class="container">
+    <h2 class="center">Get Added To The Directory Now</h2>
+    <p class="center" style="max-width:640px;margin:0 auto;color:var(--text-muted-light)">Takes about 3 minutes. Tell us your name, your Counties, and a quick blurb about yourself (nothing fancy, just straightforward). We'll handle the rest.</p>
     <div class="formbox">
       <div data-tf-widget="qZTD0o" data-tf-inline-on-mobile style="width:100%;height:560px;"></div>
       <script src="//embed.typeform.com/next/embed.js"></script>
     </div>
-    <p class="center micro" style="margin-top:16px">Form not loading? <a href="https://greg169.typeform.com/to/qZTD0o" target="_blank" rel="noopener">Open the sign-up form in a new tab</a>.<br>
+    <p class="center micro-copy" style="margin-top:16px">Form not loading? <a href="https://greg169.typeform.com/to/qZTD0o" target="_blank" rel="noopener">Open the sign-up form in a new tab</a>.<br>
     Your information is secure and will not be shared. Be sure to take advantage of this now: the Mesh stays free only as long as we can keep it that way.</p>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <img class="pmlogo" src="../assets/pumper-mesh-logo-white.png" alt="Pumper Mesh">
-    <p>An online directory for pumpers, lease operators, and well tenders alike. Brought to you by <a href="https://www.greasebook.com" target="_blank" rel="noopener">GreaseBook</a>, the industry's #1 oil and gas production software.</p>
-    <p><a href="https://www.greasebook.com" target="_blank" rel="noopener">GreaseBook</a> &nbsp;&middot;&nbsp; <a href="https://www.greasebook.com/blog/" target="_blank" rel="noopener">GreaseBook Blog</a> &nbsp;&middot;&nbsp; <a href="../operator-unchained/">Operator: Unchained (E&amp;P Magazine)</a></p>
-  </div>
+<footer class="site-footer">
+  <img class="pmlogo" src="../assets/pumper-mesh-logo-white.png" alt="Pumper Mesh">
+  <p>An online directory for pumpers, lease operators, and well tenders alike. Brought to you by <a href="https://www.greasebook.com" target="_blank" rel="noopener">GreaseBook</a>, the industry's #1 oil and gas production software.</p>
+  <p><a href="https://www.greasebook.com" target="_blank" rel="noopener">GreaseBook</a> &nbsp;&middot;&nbsp; <a href="https://www.greasebook.com/blog/" target="_blank" rel="noopener">GreaseBook Blog</a> &nbsp;&middot;&nbsp; <a href="../operator-unchained/">Operator: Unchained (E&amp;P Magazine)</a></p>
 </footer>
 
 <script>
